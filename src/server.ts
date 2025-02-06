@@ -15,7 +15,11 @@ app.use(express.json())
 
 app.use("/api", router)
 
+// default route
+app.use('/', router)
+
 app.use(errorHandler)
+
 
 app.listen(config.port, () => {
   logger.info(`Server is running on port ${config.port}`)
